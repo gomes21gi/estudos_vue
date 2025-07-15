@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Componente com Dados</h1>
-    <p>Nome: {{ nomeProduto }} - #123</p>
+    <p>Nome: {{ nomeProduto }} - {{ codigoProduto }}</p>
   </div>
 </template>
 
@@ -20,8 +20,13 @@ p {
 }
 </style>
 
+<script setup>
+const nomeProduto="Apontador"
+const codigoProduto="#987"
+</script>
+
 <!-- <script>
-// options API
+// options API (forma antiga do Vue2)
 //export default{
 //  data:function(){
 //    return{
@@ -31,7 +36,7 @@ p {
 //  }
 //}
 
-// composition API
+// composition API (forma atual do Vue3)
 // export default{
 //  setup:function(){
 //    const nomeProduto="Lápis"
