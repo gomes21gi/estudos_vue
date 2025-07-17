@@ -2,9 +2,12 @@
   <div class="componente">
     <h1>Componente com Renderização por Listas</h1>
     <p>Nome: {{ nome }}</p>
-    <p v-if="qtdeCachorros === 0">Não tem Cachorros</p>
-    <p v-else-if="qtdeCachorros === 1">Tem um Cachorro</p>
-    <p v-else>Tem muitos Cachorros</p>
+    <p v-show="cachorros.length === 0">Não tem Cachorro</p>
+    <ul>
+      <li v-for="cachorro in cachorros">
+        Nome: {{ cachorro.nome }} | Idade: {{ cachorro.idade }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -16,3 +19,16 @@ defineProps({
   cachorros:Array
 })
 </script>
+
+<style scoped>
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  font-size: large;
+}
+</style>
